@@ -19,6 +19,19 @@ else:
 TASK2:
 
 
+TASK3:
+n = int(input("Enter a number between 3 and 9: "))
+
+if n < 3 or n > 9:
+    print("Invalid input")
+else:
+    for k in range(1, 2*n):
+        if k <= n:
+            print("*" * k)
+        else:
+            print("*" * (2*n - k))
+
+
 
 
 
