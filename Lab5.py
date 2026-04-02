@@ -1,4 +1,5 @@
 QUESTION 1:
+
 def factorial(x):
     if x == 0 or x == 1:
         return 1
@@ -30,6 +31,30 @@ def main():
     x = float(input("Enter x: "))
     y = int(input("Enter number of terms: "))
     print("Solution :", exp_x(x, y))
+if __name__ == "__main__":
+    main()
+
+QUESTION 3:
+result = 0
+
+def quest3(n):
+    global result
+    if n == 1:
+        result += 1
+        return
+    quest3(n - 1)
+    if n % 2 == 0:
+        result = result - (1 / n)
+    else:
+        result = result + (1 / n)
+
+def main():
+    global result
+    n = int(input("n değerini gir: "))
+    result = 0
+    quest3(n)
+    print("Sonuç:", result)
+
 if __name__ == "__main__":
     main()
 
