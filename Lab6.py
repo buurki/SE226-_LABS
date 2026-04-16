@@ -96,10 +96,36 @@ if __name__ == "__main__":
 data_package
 
 cleaner.py
+def strip_whitespaces(string_list):
+    return [item.strip() for item in string_list]
 
-
+def remove_duplicates(data_list):
+    unique_list = []
+    for item in data_list:
+        if item not in unique_list:
+            unique_list.append(item)
+    return unique_list
 
 analyzer.py
+def calculate_mean(num_list):
+    if not num_list:
+        raise ValueError("Empty list provided.")
+    return sum(num_list) / len(num_list)
 
+def find_maximum(num_list):
+    if not num_list:
+        raise ValueError("Empty list provided.")
+    return max(num_list)
+
+def find_minimum(num_list):
+    if not num_list:
+        raise ValueError("Empty list provided/")
+    return min(num_list)
 
 __init__.py
+from .cleaner import remove_duplicates, strip_whitespaces
+from .analyzer import calculate_mean, find_maximum, find_minimum
+
+data_main.py
+
+
