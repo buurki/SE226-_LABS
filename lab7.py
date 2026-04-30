@@ -39,3 +39,24 @@ class Motorcycle(Vehicle) :
 
     def __str__(self):
         return f"[Motorcycle] {self.vid}|{self.model}|{self.year} | {self.cc}cc |{self.motortype} "
+
+
+
+def load_fleet_from_file(filename):
+    vehicles = []
+    file = open(filename, "r")
+
+    for line in file:
+        data = line.strip().split(",")
+
+        if data[0] == "Car":
+            vehicles.append(Car(data[1], data[2], int(data[3]), data[4], int(data[5])))
+
+        elif data[0] == "Truck":
+            vehicles.append(Truck(data[1], data[2], int(data[3]), int(data[4]), int(data[5])))
+
+        elif data[0] == "Motorcycle":
+            vehicles.append(Motorcycle(data[1], data[2], int(data[3]), int(data[4]), data[5]))
+
+    file.close()
+    return vehicles
