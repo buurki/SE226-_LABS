@@ -71,3 +71,30 @@ def load_fleet_from_file(filename):
 
     file.close()
     return vehicles
+
+vehicles = [
+    Car("V001", "Tesla Model 3", 2023, "Electric", 4),
+    Car("V002", "Toyota Corolla", 2018, "Petrol", 4),
+    Truck("T101", "Volvo FH16", 2019, 25000, 6),
+    Truck("T102", "Mercedes Actros", 2021, 18000, 4),
+    Motorcycle("M301", "Yamaha R1", 2024, 998, "Sport"),
+    Motorcycle("M302", "Harley Davidson", 2015, 1200, "Cruiser")
+]
+
+save_fleet_to_file(vehicles, "fleet.txt")
+
+loaded = load_fleet_from_file("fleet.txt")
+
+print("--- All Vehicles ---")
+for v in loaded:
+    print(v)
+
+print("\n--- Recent Vehicles ---")
+for v in loaded:
+    if v.is_new(4):
+        print(v)
+
+print("\n--- Electric Cars ---")
+for v in loaded:
+    if isinstance(v, Car) and v.fuel == "Electric":
+        print(v)
