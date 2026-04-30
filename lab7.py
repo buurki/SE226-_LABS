@@ -40,7 +40,18 @@ class Motorcycle(Vehicle) :
     def __str__(self):
         return f"[Motorcycle] {self.vid}|{self.model}|{self.year} | {self.cc}cc |{self.motortype} "
 
+def save_fleet_to_file(vehicles, filename):
+    file = open(filename, "w")
 
+    for v in vehicles:
+        if isinstance(v, Car):
+            file.write(f"Car,{v.vid},{v.model},{v.year},{v.fuel},{v.doors}\n")
+        elif isinstance(v, Truck):
+            file.write(f"Truck,{v.vid},{v.model},{v.year},{v.load},{v.axles}\n")
+        elif isinstance(v, Motorcycle):
+            file.write(f"Motorcycle,{v.vid},{v.model},{v.year},{v.cc},{v.motortype}\n")
+
+    file.close()
 
 def load_fleet_from_file(filename):
     vehicles = []
