@@ -30,3 +30,12 @@ class Truck(Vehicle):
 
     def __str__(self):
         return f"[Truck] {self.vid} | {self.model} | {self.year} | {self.load}kg | {self.axles}axles "
+
+class Motorcycle(Vehicle) :
+    def __init__(self,vid,model,year,cc,motortype):
+        super().__init__(vid,model,year)
+        self.cc=cc
+        self.motortype=motortype
+
+    def __str__(self):
+        return f"[Motorcycle] {self.vid}|{self.model}|{self.year} | {self.cc}cc |{self.motortype} "
