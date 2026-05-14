@@ -25,3 +25,35 @@ void loop() {
 
 
 Question 7
+
+
+int LED0 = 43;
+int LED1 = 44;
+int LED2 = 45;
+int LED3 = 46;
+
+int SW0 = 38;
+int SW1 = 39;
+int SW2 = 40;
+int SW3 = 41;
+
+void setup() {
+  pinMode(LED0, OUTPUT);
+  pinMode(LED1, OUTPUT);
+  pinMode(LED2, OUTPUT);
+  pinMode(LED3, OUTPUT);
+
+  pinMode(SW0, INPUT);
+  pinMode(SW1, INPUT);
+  pinMode(SW2, INPUT);
+  pinMode(SW3, INPUT);
+}
+
+void loop() {
+
+  digitalWrite(LED0, digitalRead(SW0));
+  digitalWrite(LED1, digitalRead(SW1));
+  digitalWrite(LED2, digitalRead(SW2));
+  digitalWrite(LED3, digitalRead(SW3));
+
+}
